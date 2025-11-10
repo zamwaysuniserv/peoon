@@ -59,28 +59,45 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css">
+
 </head>
 <body>
-  <!-- Your existing Peeon content here -->
-</body>
-  <!-- Header Section -->
-  <header>
-    <div class="logo">
-      <a href="index.html">
-        <img src="assets/images/peeon-logo.png" alt="Logo">
-      </a>
-    </div>
+ 
+<header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="assets/images/peeon-logo.png" alt="Logo">
+    </a>
+  </div>
 
-    <nav class="middle-nav">
-      <ul>
-        <li><a href="#people">Popular People</a></li>
-        <li><a href="#carousel-section">Connections</a></li>
-        <li><a href="#carousel-container1">Features</a></li>
-        <li><a href="#faq-section">FAQ</a></li>
-        <li><a href="contact.html">Contact Us</a>
-      </ul>
-    </nav>
-  </header>
+  <!-- Hamburger -->
+  <div class="menu-toggle">&#9776;</div>
+
+  <!-- Desktop Menu -->
+  <nav class="middle-nav">
+    <ul>
+      <li><a href="#people">Popular People</a></li>
+      <li><a href="#carousel-section">Connections</a></li>
+      <li><a href="#carousel-container1">Features</a></li>
+      <li><a href="#faq-section">FAQ</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <ul class="nav-links">
+    <li><a href="#people">Popular People</a></li>
+    <li><a href="#carousel-section">Connections</a></li>
+    <li><a href="#carousel-container1">Features</a></li>
+    <li><a href="#faq-section">FAQ</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</header>
+
+
+
+
 
 
   <!-- Main Container -->
@@ -304,6 +321,7 @@
     <button class="carousel-btn right-btn">&#10095;</button>
   </section>
 
+
   <!-- ====== Video Hero Section ====== -->
   <section class="video-hero" id="videoSection">
     <div id="videoWrapper" class="video-wrapper hidden">
@@ -313,7 +331,7 @@
       </video>
 
          <div class="video-text-overlay">
-      <h1 class="peeon-title">Peeon</h1>
+      <h1 class="peeon-title">Peoon</h1>
       <p class="peeon-tagline">Message Without Internet — Connect Freely, Anytime, Anywhere</p>
     </div>
     </div>
@@ -473,9 +491,9 @@
 
           </a>
           <ul>
-            <li><a href="#">Terms & Condition</a></li>
+            <li><a href="terms-condition.html">Terms & Condition</a></li>
             <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Mission & Vision</a></li>
+            <li><a href="mission-vision.html">Mission & Vision</a></li>
             <li><a href="#">Careers</a></li>
           </ul>
         </div>
@@ -510,7 +528,28 @@
 
 
 
-  </div>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  // Toggle mobile menu
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Close menu when resizing to desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1024) {
+      navLinks.classList.remove("active");
+    }
+  });
+});
+</script>
 
 
 

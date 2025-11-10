@@ -6,17 +6,13 @@
   font-family: "Poppins", sans-serif;
 }
 
-body {
-  background-color: #ffffff;
-  color: #fff;
-}
-html {
-  scroll-behavior: smooth;
-}
+
+
+/* ====== HEADER STYLING ====== */
 header {
   width: 100%;
   height: 80px;
-  background-color: #072840;
+  background-color: #072840; /* Always blue */
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -26,98 +22,183 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
-  border-bottom: 1.5px solid #00bfff; /* Thin divider line */
-}
-.logo-text {
-  text-decoration: none;
-  color: #eff0f1;
-  font-size: 22px;
-  font-weight: 700;
-  transition: color 0.3s ease;
+  border-bottom: 1.5px solid #00bfff;
 }
 
-.logo-text:hover {
-  color: #00bfff;
-}
-/* ====== LOGO ====== */
-.logo {
-  position: absolute;
-  top: 57%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  gap: 15px;
-
-  /* ✅ Adjust these values to move the logo */
-  left: 73px;   /* Move logo horizontally */
-  /* right: 50px; uncomment this and comment left:50px to move to right */
-}
 .logo img {
-  height: 70px;
-  width: auto;
-  margin-top: -1px;
+  height: 65px;
+  margin-left: 20px;
 }
 
-/* ---------- Terms Section ---------- */
-.terms-section {
-  background: #ffffff;
-  padding: 234.5px 20px;
+
+
+/* .scan-text {
+  animation: fadeInOut 4s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; transform: translateY(-10px); }
+  50% { opacity: 1; transform: translateY(0); }
+} */
+
+
+.mission-vision {
   display: flex;
+  gap: 50px;
   justify-content: center;
-  align-items: center;
- background-color: #ffffff;
-  background-image: url('assets/about-background/about-logos.png'); /* optional transparent bg */
+  align-items: flex-start;
+  padding: 120px 20px 100px;
+  background-color: #f4f9ff;
+  margin-top: 50px; /* pushes the section a bit downwards */
+  background-color: #ffffff;
+  background-image: url('assets/mission-vision/mission vision-background/about-logos.png'); /* optional transparent bg */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-.terms-container {
-  background: #072840;
-  border-radius: 20px;
-  max-width: 800px;
-  padding: 30px 25px; /* Decreased container height */
-  text-align: left;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+.mv-box {
+  position: relative;
+  width: 420px; /* made bigger */
+  min-height: 480px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.terms-container h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
+.mv-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔵 Animated Border (Railway Effect) */
+.mv-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  box-sizing: border-box;
+  pointer-events: none;
+  border-image: linear-gradient(90deg, #00bfff, #0077ff, #00bfff) 1;
+  border-image-slice: 1;
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  animation: none;
+}
+
+.mv-box:hover::before {
+  animation: drawBorder 2s linear forwards;
+}
+
+@keyframes drawBorder {
+  0% { clip-path: polygon(0 0, 0 0, 0 0, 0 0); }
+  25% { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
+  50% { clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%); }
+  75% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+
+/* 🖼️ Image Styling */
+.mv-box img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* 📝 Text Styling */
+.mv-box h2 {
+  color: #072840;
+  font-size: 24px;
+  margin-bottom: 12px;
   text-align: center;
-  color: #00bfff;
 }
 
-.terms-container p {
-  margin-bottom: 15px;
-  font-size: 1rem;
+.mv-box p {
+  color: #333;
+  font-size: 17px;
+  line-height: 1.7;
+  text-align: center;
+  padding: 0 10px;
+}
+.mission-vision {
+  align-items: stretch; /* ensures all child boxes have equal height */
+}
+/* 🌐 Responsive Design Add-on (Keeps Original Code Intact) */
+@media (max-width: 1024px) {
+  .mission-vision {
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 100px 30px;
+  }
+
+  .mv-box {
+    width: 45%;
+    min-height: 450px;
+  }
 }
 
-.terms-container ul {
-  margin-left: 20px;
-  margin-bottom: 15px;
-}
-
-.terms-container ul li {
-  margin-bottom: 8px;
-}
-
-/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
-  .terms-container {
-    padding: 25px 20px;
+  .mission-vision {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 20px;
   }
 
-  .terms-container h2 {
-    font-size: 1.6rem;
+  .mv-box {
+    width: 90%;
+    min-height: 420px;
   }
 
-  .terms-container p,
-  .terms-container li {
-    font-size: 0.9rem;
+  .mv-box img {
+    height: 200px;
+  }
+
+  .mv-box h2 {
+    font-size: 22px;
+  }
+
+  .mv-box p {
+    font-size: 15px;
+    padding: 0 5px;
   }
 }
 
+@media (max-width: 480px) {
+  .mission-vision {
+    padding: 60px 15px;
+    gap: 30px;
+  }
+
+  .mv-box {
+    width: 100%;
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .mv-box img {
+    height: 180px;
+  }
+
+  .mv-box h2 {
+    font-size: 20px;
+  }
+
+  .mv-box p {
+    font-size: 14px;
+  }
+}
+
+
+/* ---------- TOP SECTION ---------- */
 .peoon-footer {
   background: #072840;
   color: #f8faf8;
@@ -125,11 +206,8 @@ header {
   padding: 60px 8%;
   min-height: 45vh;
  overflow: hidden;
-  
-  
 }
 
-/* ---------- TOP SECTION ---------- */
 .footer-top {
   display: flex;
   justify-content: space-between;

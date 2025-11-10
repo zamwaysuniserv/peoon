@@ -1,0 +1,195 @@
+/* =======================================
+   Peoon Responsive Styles
+   Covers: Mobile + Tablet (max-width: 1024px)
+   ======================================= */
+
+/* ----------- General Reset ----------- */
+html, body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 1024px) {
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 4px 0;
+    transition: all 0.4s ease;
+  }
+
+  /* Hidden by default */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #072840;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    max-height: 60vh; /* 🔹 reduce height (e.g., 60% of viewport) */
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  /* Visible when active */
+  .nav-links.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  /* Animate each link one by one */
+  .nav-links li {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: slideIn 0.4s ease forwards;
+  }
+
+  .nav-links.active li:nth-child(1) { animation-delay: 0.1s; }
+  .nav-links.active li:nth-child(2) { animation-delay: 0.2s; }
+  .nav-links.active li:nth-child(3) { animation-delay: 0.3s; }
+  .nav-links.active li:nth-child(4) { animation-delay: 0.4s; }
+  .nav-links.active li:nth-child(5) { animation-delay: 0.5s; }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+.nav-links a{
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+/* ----------- Hero Section ----------- */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 20px 50px;
+    margin-left: -15px;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  .left h1 {
+    font-size: 32px;
+  }
+
+  .left h2 {
+    font-size: 20px;
+  }
+
+  .left p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .right img {
+    max-width: 90%;
+    height: auto;
+    margin-top: 20px;
+  }
+}
+
+/* ----------- Carousel Section ----------- */
+@media (max-width: 1024px) {
+  .carousel-section {
+    padding: 40px 0;
+  }
+
+  .carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .carousel-card {
+    flex: 0 0 70%;
+    scroll-snap-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .carousel-card {
+      flex: 0 0 85%;
+    }
+
+    .carousel-card h3 {
+      font-size: 18px;
+    }
+
+    .carousel-card p {
+      font-size: 14px;
+    }
+  }
+}
+
+/* ----------- Video Section ----------- */
+@media (max-width: 1024px) {
+  .video-wrapper {
+    height: auto;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+  }
+
+  .video-text-overlay {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .peeon-title {
+    font-size: 36px;
+  }
+
+  .peeon-tagline {
+    font-size: 16px;
+  }
+}
+
+
+/* ----------- FAQ Section ----------- */
+@media (max-width: 1024px) {
+  .faq-section {
+    padding: 30px 20px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+  }
+
+  .faq-answer {
+    font-size: 14px;
+  }
+}
+
+
