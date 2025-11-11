@@ -236,7 +236,7 @@ header {
   height: 10px;
 }
 
-.left h1 {
+.left h2 {
   font-size: 4rem; /* smaller for readability */
   color: #00bfff;
   margin-bottom: 20px;
@@ -1319,7 +1319,7 @@ body::before{
 .faq-hidden {
   display: none;
 }
-.faq-header h1 {
+.faq-header h2 {
   position: relative;
   display: inline-block;
   font-size: 2.5rem;
@@ -1327,24 +1327,14 @@ body::before{
   color: #00bfff; /* optional - adjust to your theme color */
 }
 
-.faq-header h1::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -8px; /* distance from text */
-  transform: translateX(-50%);
-  width: 80px; /* length of the underline */
-  height: 4px; /* thickness */
-  background-color: #ff9000; /* underline color - change as needed */
-  border-radius: 2px;
-}
+
 
 .faq-header {
   text-align: center;
   max-width: 800px;
   margin: auto;
 }
-.faq-header h1::after {
+.faq-header h2::after {
   content: "";
   position: absolute;
   bottom: -14px;
@@ -1355,7 +1345,7 @@ body::before{
   background-color: #00bfff;
   border-radius: 2px;
 }
-.faq-header h1 {
+.faq-header h2 {
   font-size: 32px;
   color: #00bfff;
   margin-top: -11px;
