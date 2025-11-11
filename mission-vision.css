@@ -47,7 +47,7 @@ header {
   gap: 50px;
   justify-content: center;
   align-items: flex-start;
-  padding: 120px 20px 100px;
+  padding: 120px 20px 83px;
   background-color: #f4f9ff;
   margin-top: 50px; /* pushes the section a bit downwards */
   background-color: #ffffff;
@@ -55,6 +55,7 @@ header {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  min-height: 70vh;
 }
 
 .mv-box {

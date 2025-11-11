@@ -61,7 +61,8 @@ header {
 /* ---------- Terms Section ---------- */
 .terms-section {
   background: #ffffff;
-  padding: 234.5px 20px;
+  padding: 233px 20px;
+  min-height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
